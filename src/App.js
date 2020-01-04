@@ -1,12 +1,13 @@
 import React from 'react';
 import Header from './components/Header/Header';
-import './App.css';
+import SearchedReddits from './components/SearchedReddits/SearchedReddits';
+import './App.scss';
 
 function App() {
   return (
-    <div className="App">
+    <div>
       <Header />
-       
+      <SearchedReddits />
     </div>
   );
 }
