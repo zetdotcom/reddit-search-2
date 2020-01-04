@@ -1,0 +1,31 @@
+@import "vars.scss";
+
+.searched-reddits {
+  // display: flex;
+  // flex: 1;
+  padding: 20px;
+  &__text {
+    font-size: 0.8em;
+    margin-bottom: 10px;
+  }
+  &__list {
+    display: flex;
+  }
+
+  &__list-item {
+    // padding: 10px;
+    // background: $orange-red;
+    // margin: 0 10px;
+    // border-radius: 25px;
+    // min-width: 85px;
+    // display: flex;
+    // align-items: center;
+    // justify-content: center;
+    // color: $white;
+    // font-weight: lighter;
+    // cursor: pointer;
+    // &:hover {
+    //   text-decoration: underline;
+    // }
+  }
+}

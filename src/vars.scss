@@ -3,10 +3,12 @@
 $white: white;
 // $grey: rgb(157, 152, 152);
 $grey: #f0f5f8;
+$blue-blue: linear-gradient(to right, #4880ec, #019cad);
 $green: rgb(93, 207, 71);
 $grey-light: linear-gradient(120deg, rgb(241, 241, 241), rgb(226, 226, 226));
-$red: rgb(200, 65, 65);
-$orange: rgb(221, 157, 37);
+$red: #d9762f;
+$orange: #dd9d25;
+$orange-red: linear-gradient(120deg, $orange, $red);
 $dark-orange: rgb(154, 100, 0);
 $normal-font: "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans",
   "Droid Sans", "Helvetica Neue";
