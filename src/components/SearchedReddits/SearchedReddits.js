@@ -1,13 +1,14 @@
 import React from 'react';
-import {useDispatch} from 'react-redux';
-import {addSearchedReddit, removeSearchedReddit} from '../../actions/searchedRedditsActions'
+import {useDispatch, useSelector} from 'react-redux';
+import {addSearchedReddit, removeSearchedReddit} from 'actions/searchedRedditsActions'
 import Button from '@material-ui/core/Button';
 
 function SearchedReddits() {
   const dispatch = useDispatch();
+  const searchedReddits = useSelector(state => state.searchedReddits)
   return (
     <div>
-      <div onClick={() => dispatch(addSearchedReddit('asdasd'))}>reddit</div>
+      {searchedReddits.map(item => <div>{item}</div>)}
     </div>
   )
 };
