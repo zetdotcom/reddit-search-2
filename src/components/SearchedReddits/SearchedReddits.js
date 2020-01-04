@@ -8,7 +8,7 @@ function SearchedReddits() {
   const searchedReddits = useSelector(state => state.searchedReddits)
   return (
     <div>
-      {searchedReddits.map(item => <div>{item}</div>)}
+      {searchedReddits.map((item, i) => <div key={i}>{item}</div>)}
     </div>
   )
 };

@@ -32,6 +32,8 @@ function SearchForm(props) {
 
   const classes = useStyles();
   const [labelWidth, setLabelWidth] = useState(200);
+  const [lastSearched, setLastSearched] = useState({});
+  const [isModified, setIsModified] = useState(false);
   const inputLabel = useRef(null);
   const { values, handleChange, handleSubmit } = useForm(handleRedditSearch);
   const dispatch = useDispatch();
@@ -48,19 +50,41 @@ function SearchForm(props) {
     handleChange(initialItemsNumber)
   }, []);
 
-  function handleRedditSearch(e) {
-    console.log('submit', e)
-    dispatch(addSearchedReddit(values.searchedReddit))
+
+  function handleRedditSearch() {
+    const {searchedReddit} = values;
+    setLastSearched(values || {});
+    if (isModified) {
+      dispatch(addSearchedReddit(searchedReddit))
+      console.log('submit')
+    }
+    setIsModified(false);
   }
 
-  function login() {
-    console.log('values', values)
+
+  function handleIsModified(e) {
+    console.log(lastSearched.itemsNumber, values.itemsNumber )
+    if(lastSearched.searchedReddit !== values.searchedReddit) {
+      setIsModified(true)
+    }
+  }
+
+  function handleChangeAndModificationCheck(e) {
+    handleChange(e);
+    handleIsModified()
   }
 
   return (
     <div >
       <form className="search-form" onSubmit={handleSubmit}>
-        <TextField id="outlined-search" label="Search field" type="search" variant="outlined" name="searchedReddit" value={values.searchedReddit || ''} onChange={handleChange} />
+        <TextField 
+          id="outlined-search" 
+          label="Search field" 
+          type="search" variant="outlined" 
+          name="searchedReddit" 
+          value={values.searchedReddit || ''} 
+          onChange={handleChangeAndModificationCheck} 
+        />
         <FormControl variant="outlined"
           className={classes.formControl}
         >
@@ -72,7 +96,7 @@ function SearchForm(props) {
             id="items-select"
             value={values.itemsNumber || 10}
             name="itemsNumber"
-            onChange={handleChange}
+            onChange={handleChangeAndModificationCheck}
             labelWidth={labelWidth}
             // defaultValue={10}
           //   open={open}

@@ -12,7 +12,7 @@ function useForm (callback) {
   const handleChange = (event) => {
     event.persist && event.persist();
     setValues(values => ({ ...values, [event.target.name]: event.target.value }));
-    console.log('handleChange', event)
+    console.log('handleChange', event.target.value)
   };
 
   return {
