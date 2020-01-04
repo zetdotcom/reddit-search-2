@@ -8,8 +8,8 @@ import MenuItem from '@material-ui/core/MenuItem';
 import FormControl from '@material-ui/core/FormControl';
 import Select from '@material-ui/core/Select';
 import Button from '@material-ui/core/Button';
-import { addSearchedReddit, removeSearchedReddit } from 'actions/searchedRedditsActions'
-import useForm from 'hooks/useForm';
+import { addSearchedReddit } from 'actions/searchedRedditsActions'
+import { fetchRedditsList } from 'actions/redditsListActions'
 
 
 import './SearchForm.scss';
@@ -18,9 +18,6 @@ const useStyles = makeStyles(theme => ({
   formControl: {
     margin: theme.spacing(1),
     minWidth: 100,
-  },
-  selectEmpty: {
-    marginTop: theme.spacing(2),
   },
   button: {
     minHeight: 55,
@@ -44,14 +41,23 @@ function SearchForm(props) {
     setLabelWidth(inputLabel.current.offsetWidth);
   }, []);
 
+  useEffect(() => {
+    getReddits();
+  }, [itemsNumber])
+
   function isSearchModified() {
     return (lastSearched !== searchedReddit) ? true : false;
+  }
+
+  function getReddits() {
+    dispatch(fetchRedditsList(searchedReddit, itemsNumber))
   }
 
   function handleSubmit(e) {
     e.preventDefault();
     if (isSearchModified() && !!searchedReddit) {
       dispatch(addSearchedReddit(searchedReddit));
+      getReddits();
     }
   };
 

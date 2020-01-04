@@ -15,7 +15,17 @@ const useStyles = makeStyles(theme => ({
     color: 'white',
     background: "linear-gradient(to right, #d9762f, #dd9d25)",
     border: 'none',
+    display: 'flex',
+    alignContent: 'center'
   },
+  deleteIcon: {
+    color: 'whitesmoke',
+    display: 'flex',
+    justifyContent: 'center',
+    alignItems: 'center',
+    border: '1px solid whitesmoke',
+    borderRadius: '25px'
+  }
 }));
 
 function SearchedReddits() {
@@ -37,7 +47,9 @@ function SearchedReddits() {
                 label={item} 
                 clickable 
                 className={classes.chip} 
-                onClick={() => {console.log(item)}} />
+                onClick={() => {console.log(item)}}
+                deleteIcon={<span className={classes.deleteIcon}>X</span>}
+              />
             </div>
 
           )
