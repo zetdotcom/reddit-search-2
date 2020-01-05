@@ -1,26 +1,30 @@
 import React from 'react';
-import { render } from '@testing-library/react';
-import { createStore } from 'redux'
-import { Provider } from 'react-redux';
+import { render, fireEvent } from '@testing-library/react';
 import '@testing-library/jest-dom/extend-expect'
-import {searchedRedditsReducer, initialState} from '../../reducers/searchedRedditsReducer';
 import SearchForm from './SearchForm';
 
-function renderWithRedux(
-  ui,
-  { initialState, store = createStore(searchedRedditsReducer, initialState) } = {}
-) {
-  return {
-    ...render(<Provider store={store}>{ui}</Provider>),
-    // adding `store` to the returned utilities to allow us
-    // to reference it in our tests (just try to avoid using
-    // this to test implementation details).
-    store,
-  }
-}
 
-test('renders learn react link', () => {
-  const { getByText } = renderWithRedux(<SearchForm />);
-  const linkElement = getByText(/get reddits/i);
-  expect(linkElement).toBeInTheDocument();
-});
+describe('<SearchFrom />', () => {
+  const searchForm = () => render(<SearchForm />);
+
+  test('renders get reddits button', () => {
+    const { getByText } = searchForm();
+    const button = getByText(/get reddits/i);
+    expect(button).toBeInTheDocument();
+  });
+
+  test('renders empty text field', () => {
+    const {getByLabelText} = searchForm();
+    const textField = getByLabelText('Search field');
+    expect(textField).toBeInTheDocument();
+    expect(textField).toHaveTextContent('');
+  });
+  test('render select with 10 value', () => {
+    const {getByLabelText} = searchForm();
+    const selectField = getByLabelText('Items');
+    expect(selectField).toBeInTheDocument();
+    expect(selectField).toHaveTextContent('10');
+  });
+
+})
+
