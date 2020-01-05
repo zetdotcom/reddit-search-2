@@ -1,7 +1,6 @@
-import React, { Suspense } from 'react';
+import React from 'react';
 import { useSelector } from 'react-redux';
 import LinearProgress from '@material-ui/core/LinearProgress'
-import Paper from '@material-ui/core/Paper';
 import Card from '@material-ui/core/Card';
 import CardActionArea from '@material-ui/core/CardActionArea';
 import CardActions from '@material-ui/core/CardActions';
@@ -20,10 +19,6 @@ const useStyles = makeStyles({
     flexDirection: 'column',
     justifyContent: 'space-between'
   },
-  cardActions: {
-    // display: 'flex',
-    // justifySelf: 'flex-end'
-  }
 });
 
 function RedditsList({redditsList, pending}) {
@@ -32,7 +27,6 @@ function RedditsList({redditsList, pending}) {
   // const pending = useSelector(state => state.redditsList.pending)
   const classes = useStyles();
 
-  // const thumbnail = thumbnail.includes('http') ? thumbnail : redditAvatar;
   return (
     <div className="reddits-list">
       {pending && <LinearProgress />}
@@ -53,7 +47,7 @@ function RedditsList({redditsList, pending}) {
                 </Typography>
               </CardContent>
             </CardActionArea>
-            <CardActions className={classes.cardActions}>
+            <CardActions>
               <a href={item.url} target="blank">
                 <Button color="primary">
                   See Reddit

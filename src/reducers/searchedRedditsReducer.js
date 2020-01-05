@@ -8,7 +8,7 @@ function searchedRedditsReducer(state = initState, action) {
       return [...state, action.payload];
     case REMOVE_SEARCHED_REDDIT:
       return state.filter(item => item !== action.payload)
-    default: 
+    default:
       return state;
   }
 
