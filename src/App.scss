@@ -1,5 +1,12 @@
 @import "./vars.scss";
 
+* {
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 18px;
+}
 body {
   margin: 0;
   padding: 0;
@@ -7,8 +14,6 @@ body {
   font-family: $normal-font;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  font-size: 18px;
-  box-sizing: border-box;
 }
 
 a {

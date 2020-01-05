@@ -36,7 +36,7 @@ function RedditsList() {
           <Card className={classes.card}>
             <CardActionArea>
               <CardMedia>
-                <img src={item.thumbnail.includes('http') ? item.thumbnail : redditAvatar} alt="" width="100%" height="250px" />
+                <img className="reddits-list__list-item-image" src={item.thumbnail.includes('http') ? item.thumbnail : redditAvatar} alt=""  />
               </CardMedia>
               <CardContent>
                 <Typography gutterBottom variant="h5" component="h2">
