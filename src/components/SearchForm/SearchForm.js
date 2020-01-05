@@ -1,5 +1,4 @@
 import React, { useState, useEffect, useRef } from 'react';
-// import { useDispatch, useSelector } from 'react-redux';
 import { makeStyles } from '@material-ui/core/styles';
 import TextField from '@material-ui/core/TextField';
 import InputLabel from '@material-ui/core/InputLabel';
@@ -8,8 +7,7 @@ import MenuItem from '@material-ui/core/MenuItem';
 import FormControl from '@material-ui/core/FormControl';
 import Select from '@material-ui/core/Select';
 import Button from '@material-ui/core/Button';
-import { addSearchedReddit } from 'actions/searchedRedditsActions'
-import { fetchRedditsList } from 'actions/redditsListActions'
+
 
 
 import './SearchForm.scss';
@@ -28,7 +26,7 @@ const useStyles = makeStyles(theme => ({
 
 function SearchForm(props) {
 
-  const {lastSearched, dispatch} = props;
+  const {lastSearched, getReddits, addSearchedReddit} = props;
 
   const classes = useStyles();
   const [labelWidth, setLabelWidth] = useState(200);
@@ -42,7 +40,7 @@ function SearchForm(props) {
   }, []);
 
   useEffect(() => {
-    !!searchedReddit && getReddits();
+    !!searchedReddit && getReddits(searchedReddit, itemsNumber);
   // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [itemsNumber])
 
@@ -50,15 +48,11 @@ function SearchForm(props) {
     return (lastSearched !== searchedReddit) ? true : false;
   }
 
-  function getReddits() {
-    dispatch(fetchRedditsList(searchedReddit, itemsNumber))
-  }
-
   function handleSubmit(e) {
     e.preventDefault();
     if (isSearchModified() && !!searchedReddit) {
-      dispatch(addSearchedReddit(searchedReddit));
-      getReddits();
+      getReddits(searchedReddit, itemsNumber);
+      addSearchedReddit(searchedReddit)
     }
   };
 

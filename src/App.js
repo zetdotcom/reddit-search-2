@@ -1,6 +1,6 @@
 import React from 'react';
 import Header from 'components/Header/Header';
-import SearchedReddits from 'components/SearchedReddits/SearchedReddits';
+import SearchedRedditsContainer from 'containers/SearchedRedditsContainer';
 import RedditsListContainer from 'containers/RedditsListContainer';
 import './App.scss';
 
@@ -11,7 +11,7 @@ function App() {
   return (
     <div>
       <Header />
-      <SearchedReddits />
+      <SearchedRedditsContainer />
       <RedditsListContainer />
     </div>
   );
