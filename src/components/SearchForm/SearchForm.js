@@ -42,7 +42,8 @@ function SearchForm(props) {
   }, []);
 
   useEffect(() => {
-    getReddits();
+    !!searchedReddit && getReddits();
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [itemsNumber])
 
   function isSearchModified() {

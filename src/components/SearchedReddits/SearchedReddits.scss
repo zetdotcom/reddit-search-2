@@ -2,11 +2,13 @@
 
 .searched-reddits {
   padding: 20px;
+  margin-bottom: 20px;
   &__text {
     font-size: 0.8em;
     margin-bottom: 10px;
   }
   &__list {
     display: flex;
+    overflow-x: auto;
   }
 }

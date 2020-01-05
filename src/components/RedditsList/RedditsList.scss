@@ -1,0 +1,10 @@
+.reddits-list {
+  &__list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-rows: repeat(3, 1fr);
+    grid-column-gap: 20px;
+    grid-row-gap: 20px;
+    padding: 20px;
+  }
+}

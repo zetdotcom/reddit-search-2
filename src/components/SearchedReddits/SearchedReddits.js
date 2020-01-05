@@ -3,7 +3,9 @@ import { useDispatch, useSelector } from 'react-redux';
 import { makeStyles } from '@material-ui/core/styles';
 // import Button from '@material-ui/core/Button';
 import Chip from '@material-ui/core/Chip';
-import { addSearchedReddit, removeSearchedReddit } from 'actions/searchedRedditsActions'
+import { removeSearchedReddit } from 'actions/searchedRedditsActions'
+import { fetchRedditsList } from 'actions/redditsListActions'
+
 import './SearchedReddits.scss';
 
 const useStyles = makeStyles(theme => ({
@@ -16,7 +18,8 @@ const useStyles = makeStyles(theme => ({
     background: "linear-gradient(to right, #d9762f, #dd9d25)",
     border: 'none',
     display: 'flex',
-    alignContent: 'center'
+    alignContent: 'center',
+    padding: '0 15px'
   },
   deleteIcon: {
     color: 'whitesmoke',
@@ -47,7 +50,7 @@ function SearchedReddits() {
                 label={item} 
                 clickable 
                 className={classes.chip} 
-                onClick={() => {console.log(item)}}
+                onClick={() => dispatch(fetchRedditsList(item))}
                 deleteIcon={<span className={classes.deleteIcon}>X</span>}
               />
             </div>

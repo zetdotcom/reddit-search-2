@@ -1,6 +1,8 @@
 import { ADD_SEARCHED_REDDIT, REMOVE_SEARCHED_REDDIT } from '../constants/searchedRedditsConstants';
 
-function searchedRedditsReducer(state = ['one', 'two', 'three'], action) {
+const initState = ['Javascript', 'Redux', 'React Hooks', 'React Testing Library', 'Cypress js']
+
+function searchedRedditsReducer(state = initState, action) {
   switch (action.type) {
     case ADD_SEARCHED_REDDIT:
       return [...state, action.payload];
