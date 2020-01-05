@@ -32,10 +32,11 @@ const useStyles = makeStyles(theme => ({
 }));
 
 function SearchedReddits() {
+  
   const classes = useStyles();
   const dispatch = useDispatch();
-
-  const searchedReddits = useSelector(state => state.searchedReddits)
+  const searchedReddits = useSelector(state => state.searchedReddits);
+  
   return (
     <div className="searched-reddits">
       <div className="searched-reddits__text"> Recently searched</div>

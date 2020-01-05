@@ -1,6 +1,6 @@
 import React from 'react';
-import redditImage from '../../images/reddit.png';
-import SearchForm from '../SearchForm/SearchForm'
+import redditImage from 'images/reddit.png';
+import SearchFormContainer from 'containers/SearchFormContainer'
 
 import './Header.scss';
 
@@ -10,7 +10,7 @@ const Header = () => {
       <div className="header-image">
         <img src={redditImage} alt='' />
       </div>
-        <SearchForm />
+        <SearchFormContainer />
     </div>
   );
 };

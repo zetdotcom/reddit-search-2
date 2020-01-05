@@ -26,10 +26,10 @@ const useStyles = makeStyles({
   }
 });
 
-function RedditsList() {
+function RedditsList({redditsList, pending}) {
 
-  const redditsList = useSelector(state => state.redditsList.reddits)
-  const pending = useSelector(state => state.redditsList.pending)
+  // const redditsList = useSelector(state => state.redditsList.reddits)
+  // const pending = useSelector(state => state.redditsList.pending)
   const classes = useStyles();
 
   // const thumbnail = thumbnail.includes('http') ? thumbnail : redditAvatar;

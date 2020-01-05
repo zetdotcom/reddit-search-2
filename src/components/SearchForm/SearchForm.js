@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
+// import { useDispatch, useSelector } from 'react-redux';
 import { makeStyles } from '@material-ui/core/styles';
 import TextField from '@material-ui/core/TextField';
 import InputLabel from '@material-ui/core/InputLabel';
@@ -28,14 +28,14 @@ const useStyles = makeStyles(theme => ({
 
 function SearchForm(props) {
 
+  const {lastSearched, dispatch} = props;
+
   const classes = useStyles();
   const [labelWidth, setLabelWidth] = useState(200);
   const [searchedReddit, setSearchedReddit] = useState('');
   const [itemsNumber, setItemsNumber] = useState(10);
   const inputLabel = useRef(null);
 
-  const lastSearched = useSelector(state => state.searchedReddits.slice(-1)[0]);
-  const dispatch = useDispatch();
 
   useEffect(() => {
     setLabelWidth(inputLabel.current.offsetWidth);
