@@ -1,24 +1,24 @@
 {
   "files": {
-    "main.css": "/static/css/main.d1e896e2.chunk.css",
-    "main.js": "/static/js/main.49b6dcd0.chunk.js",
-    "main.js.map": "/static/js/main.49b6dcd0.chunk.js.map",
-    "runtime-main.js": "/static/js/runtime-main.65915be3.js",
-    "runtime-main.js.map": "/static/js/runtime-main.65915be3.js.map",
-    "static/js/2.c56841ba.chunk.js": "/static/js/2.c56841ba.chunk.js",
-    "static/js/2.c56841ba.chunk.js.map": "/static/js/2.c56841ba.chunk.js.map",
-    "index.html": "/index.html",
-    "precache-manifest.7307b8f84840a86dfd8a49f6f7e55117.js": "/precache-manifest.7307b8f84840a86dfd8a49f6f7e55117.js",
-    "service-worker.js": "/service-worker.js",
-    "static/css/main.d1e896e2.chunk.css.map": "/static/css/main.d1e896e2.chunk.css.map",
-    "static/js/2.c56841ba.chunk.js.LICENSE": "/static/js/2.c56841ba.chunk.js.LICENSE",
-    "static/media/reddit-avatar.png": "/static/media/reddit-avatar.84a04d19.png",
-    "static/media/reddit.png": "/static/media/reddit.08af9c10.png"
+    "main.css": "/reddit-search-2/static/css/main.d1e896e2.chunk.css",
+    "main.js": "/reddit-search-2/static/js/main.c0f182da.chunk.js",
+    "main.js.map": "/reddit-search-2/static/js/main.c0f182da.chunk.js.map",
+    "runtime-main.js": "/reddit-search-2/static/js/runtime-main.fdbc4336.js",
+    "runtime-main.js.map": "/reddit-search-2/static/js/runtime-main.fdbc4336.js.map",
+    "static/js/2.c56841ba.chunk.js": "/reddit-search-2/static/js/2.c56841ba.chunk.js",
+    "static/js/2.c56841ba.chunk.js.map": "/reddit-search-2/static/js/2.c56841ba.chunk.js.map",
+    "index.html": "/reddit-search-2/index.html",
+    "precache-manifest.e87abc2b82d58028d675141eee91778d.js": "/reddit-search-2/precache-manifest.e87abc2b82d58028d675141eee91778d.js",
+    "service-worker.js": "/reddit-search-2/service-worker.js",
+    "static/css/main.d1e896e2.chunk.css.map": "/reddit-search-2/static/css/main.d1e896e2.chunk.css.map",
+    "static/js/2.c56841ba.chunk.js.LICENSE": "/reddit-search-2/static/js/2.c56841ba.chunk.js.LICENSE",
+    "static/media/reddit-avatar.png": "/reddit-search-2/static/media/reddit-avatar.84a04d19.png",
+    "static/media/reddit.png": "/reddit-search-2/static/media/reddit.08af9c10.png"
   },
   "entrypoints": [
-    "static/js/runtime-main.65915be3.js",
+    "static/js/runtime-main.fdbc4336.js",
     "static/js/2.c56841ba.chunk.js",
     "static/css/main.d1e896e2.chunk.css",
-    "static/js/main.49b6dcd0.chunk.js"
+    "static/js/main.c0f182da.chunk.js"
   ]
 }
